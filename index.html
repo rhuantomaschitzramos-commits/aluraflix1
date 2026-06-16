@@ -1,18 +1,250 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> prova pa interpol </title>
+    <title>GameZone</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Deixa a rolagem da página suave ao clicar no menu */
+        }
+
+        body {
+            background: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00ff88;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #00ff88;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), #121212), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            color: #00ff88;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            background: #00ff88;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #00ff88;
+            font-size: 32px;
+            position: relative;
+        }
+
+        /* Linha decorativa embaixo dos títulos */
+        h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #00ff88;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background: #1f1f1f;
+            width: 320px;
+            border-radius: 15px;
+            text-align: center;
+            overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas do card */
+            border: 1px solid #2d2d2d;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00ff88;
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover; /* Faz a imagem se adaptar perfeitamente ao espaço sem distorcer */
+            border-bottom: 3px solid #00ff88;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h4 {
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #b3b3b3;
+            font-size: 15px;
+        }
+
+        #sobre p, #contato p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #b3b3b3;
+        }
+
+        footer {
+            background: #1f1f1f;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #2d2d2d;
+            color: #888888;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-<h1>Meu blog tech</h1>
-<p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+
+<header>
+    <h1>🎮 GameZone</h1>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
 </header>
-    <h1> prova pa interpol </h1>
-    <p> Vou compatilhar conhecimentos sobre a technologia e programação</p>
-    
+
+<section class="hero" id="inicio">
+    <h2>Bem-vindo ao GameZone</h2>
+    <p>Seu portal para os melhores jogos da atualidade.</p>
+    <a href="#jogos" class="btn">Ver Jogos</a>
+</section>
+
+<section id="jogos">
+    <h3>Jogos Populares</h3>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=500&q=80" alt="Minecraft" class="card-img">
+            <div class="card-content">
+                <h4>Minecraft</h4>
+                <p>Explore, construa e sobreviva em um mundo infinito de blocos e criatividade.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&w=500&q=80" alt="Fortnite" class="card-img">
+            <div class="card-content">
+                <h4>Fortnite</h4>
+                <p>Batalhas emocionantes no estilo Battle Royale com construções e atualizações constantes.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=500&q=80" alt="Roblox" class="card-img">
+            <div class="card-content">
+                <h4>Roblox</h4>
+                <p>Um universo virtual definitivo que permite criar, compartilhar experiências e ser qualquer coisa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sobre">
+    <h3>Sobre o Site</h3>
+    <p>
+        O GameZone foi criado para apresentar informações sobre
+        jogos populares e novidades do universo gamer de forma rápida, bonita e interativa.
+    </p>
+</section>
+
+<section id="contato">
+    <h3>Contato</h3>
+    <p>
+        Dúvidas ou sugestões? Envie um e-mail para:<br>
+        <strong style="color: #00ff88;">contato@gamezone.com</strong>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 GameZone - Projeto Escolar</p>
+</footer>
+
 </body>
 </html>
-    
